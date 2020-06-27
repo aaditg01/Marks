@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY MARKS</title>
+<link rel="stylesheet" type="text/css" href="marks.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>
+
+<body style="background-color: lightgrey;" >
+	<script  type="text/javascript">
+
+
+
+		$(document).ready(function(){
+
+ 	
+       $("#datamarks").hide();
+        $("#divresult").hide();
+        $("#divpassword").show();
+       
+ 	 
+		
+				
+			
+	  $("#bp").click(function(){
+	  	
+		var totalmarks=  parseInt( $("#T1").val()     ) + parseInt( $("#T2").val()     ) + parseInt( $("#T3").val()     ) +parseInt( $("#T5").val()     )+ parseInt( $("#T6").val()     ) +parseInt( $("#T4").val()     ) ;
+		var percentage= (totalmarks/600 * 100).toFixed(2);
+		
+
+		/////$(".textbox").hide();
+		$("#TP").html('Your Percentage is: ' + percentage );
+
+
+			if(percentage>95)
+			{
+				$("#TRES").html('Remarks: Excellent');
+				$(document.body).css( "background", "green" );
+			}
+			else if(percentage>90)
+			{
+				$("#TRES").html('Remarks: VRGood');
+				$(document.body).css( "background", "lightgreen" );
+
+			}
+			else if(percentage>80)
+			{
+				$("#TRES").html('Remarks: okaish');
+				$(document.body).css( "background", "orange" );
+
+			}
+			else if(percentage>60)
+			{
+				$("#TRES").html('Remarks: need to practice more');
+				$(document.body).css( "background", "yellow" );
+			}
+			else if(percentage>30)
+			{
+				$("#TRES").html('Remarks: there is a lot of need to practice');
+				$(document.body).css( "background", "red" );
+			}
+			else{
+			$("#TRES").html('Remarks: youkidding🤣');
+				$(document.body).css( "background", "darkred" );
+			}
+
+ 				$("#datamarks").hide();
+				 $("#divpassword").hide();
+				 $("#divresult").show();
+
+
+
+
+
+
+
+		 });
+	   $("#pas").click(function(){
+			if($("#txtpassword").val()=='aa')
+			{
+				 $("#datamarks").show();
+				 $("#divpassword").hide();
+  
+			}
+			else
+			{
+				 alert("Wrong Passsword");
+
+			}
+			});
+	   $("#bb").click(function(){
+	   	 $("#datamarks").show();
+	   	 $("#divresult").hide();
+	   	 $(document.body).css( "background", "lightgrey" );
+
+			   
+	   	});
+});
+
+</script>
+			<div class="pass" id="divpassword">
+				<label>Password Please</label>
+				<input type = "text"      id = "txtpassword" >
+                 <button class="hello" id="pas" type="button">enter </button> 
+		</div>
+                
+
+			
+			<div id="datamarks">
+	<h1>SEE THE MAGIC🧙‍</h1>
+	<H2>ENTER YOUR MARKS IN THE FOLLOWING BOXES</H2>
+	<h3>Note:marks are out of 100 </h3>
+	<label>Science</label>
+	<input class="textbox" type = "number" value="100" min="0" max="100"
+                 id = "T1"><BR><BR>
+                 <label>Maths</label>
+    <input class="textbox" type = "number"  value="100"  min="0" max="100"
+                 id = "T2"><BR><BR>
+                 <label>Hindi</label>
+    <input class="textbox" type = "number"  value="100" min="0" max="100"
+                 id = "T3"> <BR><BR>	
+                 <label>Computer</label> 
+     <input class="textbox" type = "number"  value="100" min="0" max="100"
+                 id = "T4"> <BR><BR>	
+                 <label>SST</label>          
+     <input class="textbox" type = "number"  value="100" min="0" max="100"
+                 id = "T5"><BR><BR>	
+                 <label id="lbleco">Eco</label>
+     <input class="textbox" type = "number"  value="100" min="0" max="100"
+                 id = "T6">
+                   <br><BR>	
+       <button class="buttoon" id="bp" type="button">YOUR PERCANTAGE </button><br> 
+        </div>
+
+        <div class="divres" id="divresult">
+ 				<p>              
+                 <label  class="TPi"  id = "TP"></label>
+             </p>
+             <br>
+       			 <label  id = "TRES" class=TPi> </label>	
+             <p>
+                  <button class="bb" id="bb" type="button">GO BACK </button><br>
+                  </p> 
+        </div>
+
+       
+        
+                        
+</body>
+</html>
